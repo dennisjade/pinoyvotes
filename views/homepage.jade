@@ -1,0 +1,15 @@
+extends layout.jade
+
+block body
+  // Page Content
+  .container
+    .row
+      .col-md-3
+        p.lead Vote Categories
+        .list-group
+          a.list-group-item(href='/') Presidents
+          a.list-group-item(href='#') Vice-Pres
+          a.list-group-item(href='#') Cebu City Mayor
+          a.list-group-item(href='#') Issues
+      .col-md-9(ng-view='')
+        

@@ -1,0 +1,24 @@
+{
+  "name": "assets",
+  "authors": [
+    "Dencio Toribio <dencio.toribio@ph.ibm.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies":{
+    "jquery"    : "2.2.0",
+    "bootstrap" : "3.3.6",
+    "angular"   : "1.4.8",
+    "angular-route":"1.4.8"
+  }
+}
