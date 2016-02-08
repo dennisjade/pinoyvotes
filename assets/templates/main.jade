@@ -4,14 +4,11 @@
       ol.carousel-indicators
         li.active(data-target='#carousel-example-generic', data-slide-to='0')
         li(data-target='#carousel-example-generic', data-slide-to='1')
-        li(data-target='#carousel-example-generic', data-slide-to='2')
       .carousel-inner
         .item.active
-          img.slide-image.carousel-sizes(src='/images/carousel-pres1.jpg', alt='')
+          img.slide-image.carousel-sizes(src="/images/carousel-pres2.jpg", alt='')
         .item
-          img.slide-image.carousel-sizes(src='/images/carousel-pres2.jpg', alt='')
-        .item
-          img.slide-image.carousel-sizes(src='/images/carousel-pres3.jpg', alt='')
+          img.slide-image.carousel-sizes(src="/images/carousel-pres3.jpg", alt='')
       a.left.carousel-control(href='#carousel-example-generic', data-slide='prev')
         span.glyphicon.glyphicon-chevron-left
       a.right.carousel-control(href='#carousel-example-generic', data-slide='next')
@@ -21,25 +18,21 @@
     .thumbnail
       img.profile-sizes(src='/images/roxas.png', alt='')
       .caption
-        h4.pull-right Votes: 11111
+        h4.pull-right Votes: 0
         h4
           a(href='#') Mar Roxas
         p
           | This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          
       .ratings
         p.pull-right 15 reviews
-        p
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
+        p(ng-controller="fbController")
+          button.btn.btn-default.btn-xs(type='button', name='voteMe', data-ng-disabled="!facebookReady",ng-click="vote()") vote me
+          button.btn.btn-default.btn-xs(type='button', name='unvoteMe', data-ng-disabled="!facebookReady", ng-click="IntentLogin()") un-vote me
   .col-sm-4.col-lg-4.col-md-4
     .thumbnail
       img.profile-sizes(src='/images/binay.png', alt='')
       .caption
-        h4.pull-right Votes: 11111
+        h4.pull-right Votes: 0
         h4
           a(href='#') Jojo Binay
         p
@@ -47,16 +40,12 @@
       .ratings
         p.pull-right 12 reviews
         p
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star-empty
+          button.btn.btn-default.btn-xs(type='button', name='voteMe',ng-click='watchLoginChange()') vote me
   .col-sm-4.col-lg-4.col-md-4
     .thumbnail
       img.profile-sizes(src='/images/poe.png', alt='')
       .caption
-        h4.pull-right Votes: 11111
+        h4.pull-right Votes: 0
         h4
           a(href='#') Grace Poe
         p
@@ -64,16 +53,12 @@
       .ratings
         p.pull-right 31 reviews
         p
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star-empty
+          button.btn.btn-default.btn-xs(type='button', name='voteMe') vote me
   .col-sm-4.col-lg-4.col-md-4
     .thumbnail
       img.profile-sizes(src='/images/duterte.png', alt='')
       .caption
-        h4.pull-right Votes: 11111
+        h4.pull-right Votes: 0
         h4
           a(href='#') Rody Duterte
         p
@@ -81,16 +66,12 @@
       .ratings
         p.pull-right 6 reviews
         p
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star-empty
-          span.glyphicon.glyphicon-star-empty
+          button.btn.btn-default.btn-xs(type='button', name='voteMe') vote me
   .col-sm-4.col-lg-4.col-md-4
     .thumbnail
       img.profile-sizes(src='/images/miriam.png', alt='')
       .caption
-        h4.pull-right Votes: 11111
+        h4.pull-right Votes: 0
         h4
           a(href='#') Miriam Santiago
         p
@@ -98,8 +79,4 @@
       .ratings
         p.pull-right 18 reviews
         p
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star-empty
+          button.btn.btn-default.btn-xs(type='button', name='voteMe') vote me

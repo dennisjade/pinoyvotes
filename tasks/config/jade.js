@@ -1,12 +1,14 @@
 module.exports = function(grunt) {
   // Project configuration.
-  grunt.initConfig({
-    jade: {
+  grunt.config.set('jade', {
       compile: {
         options: {
           pretty: true,
         },
         cwd: 'templates',
+        // files: {
+        //   '.tmp/public/templates.js': require('../pipeline').templateFilesToInject
+        // }
         files: [{
           expand: true,
           cwd : 'assets/templates',
@@ -15,10 +17,7 @@ module.exports = function(grunt) {
           ext : '.html'
         }]
       }
-    }
   });
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jade');
-  // Default task.
-  //grunt.registerTask('build', 'Convert Jade templates into html templates', ['jade']);
 };

@@ -34,6 +34,9 @@ var jsFilesToInject = [
   'bower_components/bootstrap/dist/js/bootstrap.min.js',
   'bower_components/angular/angular.min.js',
   'bower_components/angular-route/angular-route.min.js',
+  'bower_components/angular-facebook/lib/angular-facebook.js',
+  'bower_components/underscore/underscore-min.js',
+  'bower_components/angular-underscore-module/angular-underscore-module.js',
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
   'js/**/*.js',

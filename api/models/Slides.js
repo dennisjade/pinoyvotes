@@ -1,26 +1,19 @@
 /**
-* Votes.js
+* Slides.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
 */
 
 module.exports = {
-
   attributes: {
-    candidateName : {
-      'type'   : 'string',
-      'unique' : true
-    },
-    desc : {
+    link : {
       'type' : 'string'
     },
-    votes : {
-      'type' : 'integer'
-    },
-    likes : {
-      'type' : 'integer'
+    images : {
+      'type' : 'array'
     }
   }
+
 };
 
