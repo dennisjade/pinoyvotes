@@ -7,8 +7,9 @@
 
 
 voteApp.service('MainService', function($http){
-  var votesUrl = '/main/getVotesDetails',
-      slidesUrl= '/slides/getImages';
+  var getVotesUrl = '/main/getVotesDetails',
+      slidesUrl= '/slides/getImages',
+      recordVotesUrl = '/votes/'
 
   var doRequest = function(opts, url) {
       return $http({
@@ -22,7 +23,10 @@ voteApp.service('MainService', function($http){
       return doRequest(opts, votesUrl); 
     },
     'getVotes' : function(opts){
-      return doRequest(opts, votesUrl); 
+      return doRequest(opts, getVotesUrl); 
+    },
+    'recordVotes': function(opts){
+      return doRequest(opts, )
     }
 
       // var defer = $q.defer();

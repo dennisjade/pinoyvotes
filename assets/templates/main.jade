@@ -26,8 +26,8 @@
       .ratings
         p.pull-right 15 reviews
         p(ng-controller="fbController")
-          button.btn.btn-default.btn-xs(type='button', name='voteMe', data-ng-disabled="!facebookReady",ng-click="vote()") vote me
-          button.btn.btn-default.btn-xs(type='button', name='unvoteMe', data-ng-disabled="!facebookReady", ng-click="IntentLogin()") un-vote me
+          button.btn.btn-default.btn-xs(type='button', name='voteMe', data-ng-disabled="!facebookReady",ng-click="vote(1)") vote me
+          button.btn.btn-default.btn-xs(type='button', name='unvoteMe', data-ng-disabled="!facebookReady", ng-click="vote(-1)") un-vote me
   .col-sm-4.col-lg-4.col-md-4
     .thumbnail
       img.profile-sizes(src='/images/binay.png', alt='')

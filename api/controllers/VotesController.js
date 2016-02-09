@@ -6,10 +6,10 @@
  */
 
 module.exports = {
-  getImages : function(req, res) {
+  recordVotes : function(req, res) {
     console.log('req.body ');
     console.log(req.query);
-    SlidesService.getImages('/', function(err, data){
+    Votes.recordVotes('/', function(err, data){
       var ret = {
         status:200,
         msg: "success",

@@ -109,17 +109,10 @@ voteApp.controller('mainController',
     } else {
       console.log('User is good. Count this vote ',$rootScope.user)
     }
+  }
 
-    // $facebook.getLoginStatus(function(loginStatus){
-    //   console.log('Login Status: ',loginStatus, $rootScope.user)
-    // })
-    // if (_.isEmpty($scope.user)){
-    //   $scope.login().then(function(){
-    //     console.log('Lets count this votes')
-    //   })
-    // }else{
-    //   console.log('Lets count the votes')
-    // }
+  $scope.recordVote = function(){
+    
   }
 
 }])

@@ -1,5 +1,5 @@
 /**
-* Votes.js
+* User.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
@@ -8,26 +8,17 @@
 module.exports = {
 
   attributes: {
-    candidateName : {
+    userid : {
       'type'   : 'string',
-      'unique' : true
+      'unique' : true,
+      'collection' : 'votes',
+      'via' : 'voters',
+      'dominant' :true
     },
-    desc : {
+    fname : {
       'type' : 'string'
     },
-    votes : {
-      'type' : 'integer',
-      'defaultsTo' : 0
-    },
-    likes : {
-      'type' : 'integer',
-      'defaultsTo' : 0
-    },
-    voters : {
-      'collection' : 'user',
-      'via' : 'userid'
-    },
-    comments : {
+    lname : {
       'type' : 'string'
     }
   }
