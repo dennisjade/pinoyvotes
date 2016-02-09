@@ -12,6 +12,9 @@ module.exports = {
       'type'   : 'string',
       'unique' : true
     },
+    img : {
+      'type'   : 'string'
+    },
     desc : {
       'type' : 'string'
     },

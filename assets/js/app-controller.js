@@ -6,32 +6,10 @@
 
 var voteApp = angular.module('voteModule', ['ngRoute','facebook','underscore'])
 
-// .config( function( $facebookProvider ) {
-//   $facebookProvider.setAppId('247396145430424');
-// })
-
   .run( function( $rootScope ) {
     // declare global vars
     $rootScope.user = {};
     $rootScope.userIsConnected = false
-    // Load the facebook SDK asynchronously
-    // (function(){
-    //    // If we've already installed the SDK, we're done
-    //    if (document.getElementById('facebook-jssdk')) {return;}
-
-    //    // Get the first script element, which we'll use to find the parent node
-    //    var firstScriptElement = document.getElementsByTagName('script')[0];
-
-    //    // Create a new script element and set its id
-    //    var facebookJS = document.createElement('script'); 
-    //    facebookJS.id = 'facebook-jssdk';
-
-    //    // Set the new script's source to the source of the Facebook JS SDK
-    //    facebookJS.src = '//connect.facebook.net/en_US/sdk.js';
-
-    //    // Insert the Facebook JS SDK into the DOM
-    //    firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
-    //  }());
   })
 
 
@@ -81,7 +59,7 @@ voteApp.controller('mainController',
     $scope.votes = results.data
   })
 
-  $scope.vote = function(){
+  $scope.vote = function($plusOrMinus, $candidateId){
     if (_.isEmpty($rootScope.user)){
       if ($rootScope.userIsConnected){
         Facebook.api('/me', function(response) {
@@ -91,6 +69,7 @@ voteApp.controller('mainController',
             $scope.$apply(function() {
               $rootScope.user = response;
               console.log('User identified. Voting now ',response)
+              $scope.recordVote($rootScope.user, $candidateId, $plusOrMinus)
             });
             
           });
@@ -101,6 +80,7 @@ voteApp.controller('mainController',
               $scope.$apply(function() {
                 $rootScope.user = response;
                 console.log('User has login. Voting now ',response)
+                $scope.recordVote($rootScope.user, $candidateId, $plusOrMinus)
               });
             })
           }
@@ -111,8 +91,12 @@ voteApp.controller('mainController',
     }
   }
 
-  $scope.recordVote = function(){
-    
+  $scope.recordVote = function($user, $candidateId, $plusOrMinus){
+    var opts = {voter:$user, candidateId:$candidateId, plusOrMinus:$plusOrMinus}
+    console.log('optsssssss', opts)
+    MainServer.recordVotes(opts).success(function(results){
+      $scope.recentVoteCount = results.votes
+    }) 
   }
 
 }])

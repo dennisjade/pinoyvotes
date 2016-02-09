@@ -43,23 +43,28 @@ module.exports.bootstrap = function(cb) {
     var presidentiables = [
       {
         candidateName: 'Mar Roxas',
-        desc:'Mar who is yellow'
+        desc: 'Mar who is yellow',
+        img : '/images/roxas.png'
       },
       {
         candidateName: 'Jojo Binay',
-        desc:'UNA party and is a boyscout'
+        desc:'UNA party and is a boyscout',
+        img : '/images/binay.png'
       },
       {
         candidateName: 'Grae Poe',
-        desc:'Independent Ambisyosa'
+        desc:'Independent Ambisyosa',
+        img : '/images/poe.png'
       },
       {
         candidateName: 'Rody Duterte',
-        desc:'PDP-Laban chicks killer'
+        desc:'PDP-Laban chicks killer',
+        img : '/images/duterte.png'
       },
       {
         candidateName: 'Miriam Santiago',
-        desc:'Genuis with cancer'
+        desc:'Genuis with cancer',
+        img : 'miriam.png'
       }
     ]
 
@@ -76,7 +81,7 @@ module.exports.bootstrap = function(cb) {
               console.log("Olryt then we have some candidate added:", presidentiables.candidateName)
           })
         }else{
-          Votes.update({candidateName:candidateName},presidentiables).exec(function(err, data){
+          Votes.update({candidateName:presidentiables.candidateName},presidentiables).exec(function(err, data){
             if (err)
               console.log("What an error when updating candidate: ", presidentiables.candidateName)
             else

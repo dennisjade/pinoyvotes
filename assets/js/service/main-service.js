@@ -9,24 +9,25 @@
 voteApp.service('MainService', function($http){
   var getVotesUrl = '/main/getVotesDetails',
       slidesUrl= '/slides/getImages',
-      recordVotesUrl = '/votes/'
+      recordVotesUrl = '/votes/recordVotes'
 
-  var doRequest = function(opts, url) {
+  var doRequest = function(data, url,method) {
       return $http({
-        method: 'GET',
+        method: method,
         url: url
+        data: data
       });
   }
 
   return {
-    'getSlides' : function(opts){
-      return doRequest(opts, votesUrl); 
+    'getSlides' : function(data){
+      return doRequest(opts, votesUrl, 'GET'); 
     },
-    'getVotes' : function(opts){
-      return doRequest(opts, getVotesUrl); 
+    'getVotes' : function(data){
+      return doRequest(opts, getVotesUrl, 'GET'); 
     },
-    'recordVotes': function(opts){
-      return doRequest(opts, )
+    'recordVotes': function(data){
+      return doRequest(opts, recordVotesUrl, 'POST');
     }
 
       // var defer = $q.defer();

@@ -14,20 +14,21 @@
       a.right.carousel-control(href='#carousel-example-generic', data-slide='next')
         span.glyphicon.glyphicon-chevron-right
 .row
-  .col-sm-4.col-lg-4.col-md-4
+  .col-sm-4.col-lg-4.col-md-4(ng-repeat="candidate in candidates")
     .thumbnail
-      img.profile-sizes(src='/images/roxas.png', alt='')
+      input(type="hidden", value="{{candidate._id}}")
+      img.profile-sizes(src="{{candidate.img}}", alt='')
       .caption
         h4.pull-right Votes: 0
         h4
-          a(href='#') Mar Roxas
+          a(href='#') {{candidate.candidateName}}
         p
-          | This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          | {{candidate.desc}}
       .ratings
         p.pull-right 15 reviews
         p(ng-controller="fbController")
-          button.btn.btn-default.btn-xs(type='button', name='voteMe', data-ng-disabled="!facebookReady",ng-click="vote(1)") vote me
-          button.btn.btn-default.btn-xs(type='button', name='unvoteMe', data-ng-disabled="!facebookReady", ng-click="vote(-1)") un-vote me
+          button.btn.btn-default.btn-xs(type='button', name='voteMe', data-ng-disabled="!facebookReady",ng-click="vote(1, candidate._id)") vote me
+          button.btn.btn-default.btn-xs(type='button', name='unvoteMe', data-ng-disabled="!facebookReady", ng-click="vote(-1,candidate._id)") un-vote me
   .col-sm-4.col-lg-4.col-md-4
     .thumbnail
       img.profile-sizes(src='/images/binay.png', alt='')
